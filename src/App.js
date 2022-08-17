@@ -1,6 +1,8 @@
+import React from "react";
+import RouterApp from "./routes/Router";
+
 export default function App() {
   return (
-    <div className="App">
-    </div>
+    <RouterApp />
   );
 };
