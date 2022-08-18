@@ -1,35 +1,54 @@
 import styled from 'styled-components';
 
-const ToastSuccessStyled = styled.div`
-  background-color: ${props => props.backgroundColor};
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  background-color: ${props => props.backgroundColor};
+  width: 256px;
   height: 64px;
-  position: absolute;
-  opacity: 0.9;
-  right: 6px;
-  top: 6px;
-  z-index: 1;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
-
-  &:hover {
-    opacity: 1;
-  }
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
 `;
 
-const SpanToastText = styled.span`
+const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 32px;
+  padding: 0 16px;
+`;
+
+const Title = styled.strong`
+  font-size: 16px;
   color: ${props => props.color};
+`;
+
+const CloseButton = styled.button`
+  background: none;
+  color: ${props => props.color};
+  border: none;
+  cursor: pointer;
+  outline: none;
+`;
+
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 32px);
+  padding: 0 16px;
+`;
+
+const Text = styled.span`
   font-size: 14px;
-  font-weight: 400;
+  text-align: start;
+  color: ${props => props.color};
 `;
 
-const ToastCloseButton = styled.span`
-  color: #FFFFFF;
-`;
-
-export {ToastSuccessStyled, SpanToastText, ToastCloseButton};
+export {Container, Header, CloseButton, Title, Body, Text};
